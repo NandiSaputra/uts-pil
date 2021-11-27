@@ -3,10 +3,11 @@
 @section('title', 'Groups')
 
 @section('content')
-    <a href="/groups/create" class="btn btn-primary">Tambah Groups</a>
+    <a href="/groups/create" class="btn btn-success">Tambah Groups</a>
+    <div class="mb-3"></div>
     @foreach ($groups as $group)
 
-        <div class="card" style="width: 18rem;">
+        <div class="card text-dark bg-info mb-3" style="width: 18rem;">
             <h5 class="card-header"><a href="/groups/{{ $group['id'] }}" style="color:black">{{ $group['name'] }}</a>
             </h5>
             <div class="card-body">
@@ -15,7 +16,7 @@
                 <h3>Jumlah Member : {{ $group->friends_count }}</h3>
                 </p>
                 <hr>
-                <a href="/groups/addmember/{{ $group['id'] }}" class="btn btn-primary">Tambah Anggota</a>
+                <a href="/groups/addmember/{{ $group['id'] }}" class="btn btn-success">Tambah Anggota</a>
                 <hr>
                 <ul class="list-group">
                     @foreach ($group->friends as $friend)

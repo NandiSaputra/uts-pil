@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Groups;
 use App\Models\Friends;
 
+
 class GroupsController extends Controller
 {
     /**
@@ -15,7 +16,7 @@ class GroupsController extends Controller
      */
     public function index()
     {
-        $groups = Groups::withCount('friends')->orderBy('id', 'desc')->paginate(3);
+        $groups = Groups::withCount('friends')->orderBy('id', 'desc')->paginate(2);
         return view('groups.index', compact('groups'));
     }
 

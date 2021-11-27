@@ -4,12 +4,13 @@
 
 @section('content')
     <a href="/friends/create" class="btn btn-primary">Tambah Teman</a>
+    <div class="mb-3"></div>
     @foreach ($friends as $friend)
 
-        <div class="row">
+        <div class="row-2">
             <div class="col-sm-3">
-                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                    <h5 class=" card-header"><a href="/friends/{{ $friend->id }}"
+                <div class="card text-dark bg-light mb-3 " style="max-width: 18rem;">
+                    <h5 class=" card-header"><a href="/friends/{{ $friend->id }}" class="text-decoration-none"
                             style="color:black">{{ $friend->nama }}</a>
                     </h5>
                     <div class="card-body">
@@ -17,7 +18,7 @@
                         <p class="card-text"><b>ALAMAT :</b>{{ $friend->alamat }}</p>
                         </p>
                         <form action="/friends/{{ $friend->id }}" method="POSt">
-                            <a href="/friends/{{ $friend->id }}/edit" class="btn btn-warning">Edit Teman</a>
+                            <a href="/friends/{{ $friend->id }}/edit" class="btn btn-success">Edit Teman</a>
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">Delete Teman</button>
